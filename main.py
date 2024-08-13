@@ -63,6 +63,11 @@ def convert_currency():
     else:
         result_label.config(text="Conversion failed.")
 
+def load_flag(currency_code):
+    img_path = os.path.join("flags", f"{currency_code}.png")
+    img = Image.open(img_path).resize((25, 15), Image.ANTIALIAS)
+    return ImageTk.PhotoImage(img)
+
 root = tk.Tk()
 root.title("Currency Converter")
 root.geometry("400x300")
