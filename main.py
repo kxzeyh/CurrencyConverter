@@ -84,7 +84,7 @@ def update_flag(label, currency_code):
 root = tk.Tk()
 root.title("Currency Converter")
 root.geometry("400x300")
-root.resizable(False, False)
+root.resizable(True, True)
 
 title_label = tk.Label(root, text="Currency Converter", font=("Arial", 18, "bold"))
 title_label.pack(pady=10)
@@ -96,15 +96,19 @@ base_currency_label = tk.Label(frame, text="Base Currency:", font=("Arial", 12))
 base_currency_label.grid(row=0, column=0, padx=10, pady=5)
 
 base_currency_var = tk.StringVar(value="USD")
-base_currency_combo = ttk.Combobox(frame, textvariable=base_currency_var, values=currency_codes, font=("Arial", 12), state="readonly", width=10)
+base_currency_combo = ttk.Combobox(frame, textvariable=base_currency_var, values=currencies, font=("Arial", 12), state="readonly", width=10)
 base_currency_combo.grid(row=0, column=1, padx=10, pady=5)
 base_currency_combo.current(0)
+
+base_flag_label = tk.Label(frame)
+base_flag_label.grid(row=0, column=2, padx=10)
+update_flag(base_flag_label, base_currency_var.get())
 
 target_currency_label = tk.Label(frame, text="Target Currency:", font=("Arial", 12))
 target_currency_label.grid(row=1, column=0, padx=10, pady=5)
 
 target_currency_var = tk.StringVar(value="EUR")
-target_currency_combo = ttk.Combobox(frame, textvariable=target_currency_var, values=currency_codes, font=("Arial", 12), state="readonly", width=10)
+target_currency_combo = ttk.Combobox(frame, textvariable=target_currency_var, values=currencies, font=("Arial", 12), state="readonly", width=10)
 target_currency_combo.grid(row=1, column=1, padx=10, pady=5)
 target_currency_combo.current(1)
 
