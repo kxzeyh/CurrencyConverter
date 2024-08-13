@@ -38,3 +38,8 @@ def convert_currency():
         result_label.config(text=f"{amount:.2f} {base_currency} = {converted_amount:.2f} {target_currency}")
     else:
         result_label.config(text="Conversion failed.")
+
+root = tk.Tk()
+root.title("Currency Converter")
+root.geometry("400x300")
+root.resizable(False, False)
