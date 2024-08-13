@@ -76,6 +76,11 @@ def swap_currencies():
     update_flag(base_flag_label, base_currency_var.get())
     update_flag(target_flag_label, target_currency_var.get())
 
+def update_flag(label, currency_code):
+    flag_image = load_flag(currency_code)
+    label.config(image=flag_image)
+    label.image = flag_image
+
 root = tk.Tk()
 root.title("Currency Converter")
 root.geometry("400x300")
