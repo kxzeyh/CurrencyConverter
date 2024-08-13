@@ -28,3 +28,7 @@ def convert_currency():
     except ValueError:
         messagebox.showerror("Input Error", "Please enter a valid number.")
         return
+
+    api_key = '3a2af7d89f02d2d2cc69c173' 
+    exchange_rate = get_exchange_rate(api_key, base_currency, target_currency)
+    
