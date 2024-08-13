@@ -12,3 +12,13 @@ def get_exchange_rate(api_key, base_currency, target_currency):
     else:
         messagebox.showerror("Error", "Failed to retrieve exchange rates.")
         return None
+
+
+def convert_currency():
+    base_currency = base_currency_var.get().upper()
+    target_currency = target_currency_var.get().upper()
+    amount = amount_entry.get()
+
+    if not amount:
+        messagebox.showerror("Input Error", "Please enter a valid amount.")
+        return
