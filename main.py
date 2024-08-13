@@ -43,3 +43,16 @@ root = tk.Tk()
 root.title("Currency Converter")
 root.geometry("400x300")
 root.resizable(False, False)
+
+title_label = tk.Label(root, text="Currency Converter", font=("Arial", 18, "bold"))
+title_label.pack(pady=10)
+
+frame = tk.Frame(root)
+frame.pack(pady=10)
+
+base_currency_label = tk.Label(frame, text="Base Currency:", font=("Arial", 12))
+base_currency_label.grid(row=0, column=0, padx=10, pady=5)
+base_currency_var = tk.StringVar(value="USD")
+base_currency_entry = ttk.Entry(frame, textvariable=base_currency_var, font=("Arial", 12), width=10)
+base_currency_entry.grid(row=0, column=1, padx=10, pady=5)
+
