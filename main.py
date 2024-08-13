@@ -22,3 +22,9 @@ def convert_currency():
     if not amount:
         messagebox.showerror("Input Error", "Please enter a valid amount.")
         return
+    
+    try:
+        amount = float(amount)
+    except ValueError:
+        messagebox.showerror("Input Error", "Please enter a valid number.")
+        return
