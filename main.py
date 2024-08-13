@@ -68,6 +68,14 @@ def load_flag(currency_code):
     img = Image.open(img_path).resize((25, 15), Image.ANTIALIAS)
     return ImageTk.PhotoImage(img)
 
+def swap_currencies():
+    base_currency = base_currency_var.get()
+    target_currency = target_currency_var.get()
+    base_currency_var.set(target_currency)
+    target_currency_var.set(base_currency)
+    update_flag(base_flag_label, base_currency_var.get())
+    update_flag(target_flag_label, target_currency_var.get())
+
 root = tk.Tk()
 root.title("Currency Converter")
 root.geometry("400x300")
