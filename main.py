@@ -56,3 +56,19 @@ base_currency_var = tk.StringVar(value="USD")
 base_currency_entry = ttk.Entry(frame, textvariable=base_currency_var, font=("Arial", 12), width=10)
 base_currency_entry.grid(row=0, column=1, padx=10, pady=5)
 
+target_currency_label = tk.Label(frame, text="Target Currency:", font=("Arial", 12))
+target_currency_label.grid(row=1, column=0, padx=10, pady=5)
+target_currency_var = tk.StringVar(value="EUR")
+target_currency_entry = ttk.Entry(frame, textvariable=target_currency_var, font=("Arial", 12), width=10)
+target_currency_entry.grid(row=1, column=1, padx=10, pady=5)
+
+amount_label = tk.Label(frame, text="Amount:", font=("Arial", 12))
+amount_label.grid(row=2, column=0, padx=10, pady=5)
+amount_entry = ttk.Entry(frame, font=("Arial", 12), width=10)
+amount_entry.grid(row=2, column=1, padx=10, pady=5)
+
+convert_button = ttk.Button(root, text="Convert", command=convert_currency)
+convert_button.pack(pady=20)
+
+result_label = tk.Label(root, text="", font=("Arial", 14, "bold"))
+result_label.pack(pady=10)
