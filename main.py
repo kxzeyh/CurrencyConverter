@@ -2,6 +2,10 @@ import tkinter as tk
 from tkinter import ttk, messagebox
 import requests
 
+currency_codes = [
+    "USD", "EUR", "GBP", "JPY", "AUD", "CAD", "CHF", "CNY", "SEK", "NZD",
+    "MXN", "SGD", "HKD", "NOK", "KRW", "TRY", "RUB", "INR", "BRL", "ZAR"
+]
 def get_exchange_rate(api_key, base_currency, target_currency):
     url = f"https://v6.exchangerate-api.com/v6/3a2af7d89f02d2d2cc69c173/latest/USD"
     response = requests.get(url)
@@ -53,16 +57,14 @@ frame.pack(pady=10)
 base_currency_label = tk.Label(frame, text="Base Currency:", font=("Arial", 12))
 base_currency_label.grid(row=0, column=0, padx=10, pady=5)
 base_currency_var = tk.StringVar(value="USD")
-base_currency_combo = ttk.Combobox(frame, textvariable=base_currency_var, values=currency_codes, font=("Arial", 12), state="readonly", width=10)
-base_currency_combo.grid(row=0, column=1, padx=10, pady=5)
-base_currency_combo.current(0)
+base_currency_entry = ttk.Entry(frame, textvariable=base_currency_var, font=("Arial", 12), width=10)
+base_currency_entry.grid(row=0, column=1, padx=10, pady=5)
 
 target_currency_label = tk.Label(frame, text="Target Currency:", font=("Arial", 12))
 target_currency_label.grid(row=1, column=0, padx=10, pady=5)
 target_currency_var = tk.StringVar(value="EUR")
-target_currency_combo = ttk.Combobox(frame, textvariable=target_currency_var, values=currency_codes, font=("Arial", 12), state="readonly", width=10)
-target_currency_combo.grid(row=1, column=1, padx=10, pady=5)
-target_currency_combo.current(1)
+target_currency_entry = ttk.Entry(frame, textvariable=target_currency_var, font=("Arial", 12), width=10)
+target_currency_entry.grid(row=1, column=1, padx=10, pady=5)
 
 amount_label = tk.Label(frame, text="Amount:", font=("Arial", 12))
 amount_label.grid(row=2, column=0, padx=10, pady=5)
