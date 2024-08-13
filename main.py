@@ -112,6 +112,13 @@ target_currency_combo = ttk.Combobox(frame, textvariable=target_currency_var, va
 target_currency_combo.grid(row=1, column=1, padx=10, pady=5)
 target_currency_combo.current(1)
 
+target_flag_label = tk.Label(frame)
+target_flag_label.grid(row=1, column=2, padx=10)
+update_flag(target_flag_label, target_currency_var.get())
+
+swap_button = ttk.Button(root, text="Swap", command=swap_currencies)
+swap_button.pack(pady=5)
+
 amount_label = tk.Label(frame, text="Amount:", font=("Arial", 12))
 amount_label.grid(row=2, column=0, padx=10, pady=5)
 
