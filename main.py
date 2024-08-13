@@ -72,3 +72,5 @@ convert_button.pack(pady=20)
 
 result_label = tk.Label(root, text="", font=("Arial", 14, "bold"))
 result_label.pack(pady=10)
+
+root.mainloop()
