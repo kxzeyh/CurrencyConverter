@@ -32,3 +32,9 @@ def convert_currency():
     api_key = '3a2af7d89f02d2d2cc69c173' 
     exchange_rate = get_exchange_rate(api_key, base_currency, target_currency)
     
+
+    if exchange_rate:
+        converted_amount = amount * exchange_rate
+        result_label.config(text=f"{amount:.2f} {base_currency} = {converted_amount:.2f} {target_currency}")
+    else:
+        result_label.config(text="Conversion failed.")
