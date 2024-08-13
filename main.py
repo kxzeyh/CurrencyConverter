@@ -4,10 +4,28 @@ import requests
 from PIL import Image, ImageTk
 import os
 
-currency_codes = [
-    "USD", "EUR", "GBP", "JPY", "AUD", "CAD", "CHF", "CNY", "SEK", "NZD",
-    "MXN", "SGD", "HKD", "NOK", "KRW", "TRY", "RUB", "INR", "BRL", "ZAR"
-]
+currencies = {
+    "USD": "United States",
+    "EUR": "Euro",
+    "GBP": "United Kingdom",
+    "JPY": "Japan",
+    "AUD": "Australia",
+    "CAD": "Canada",
+    "CHF": "Switzerland",
+    "CNY": "China",
+    "SEK": "Sweden",
+    "NZD": "New Zealand",
+    "MXN": "Mexico",
+    "SGD": "Singapore",
+    "HKD": "Hong Kong",
+    "NOK": "Norway",
+    "KRW": "South Korea",
+    "TRY": "Turkey",
+    "RUB": "Russia",
+    "INR": "India",
+    "BRL": "Brazil",
+    "ZAR": "South Africa"
+}
 def get_exchange_rate(api_key, base_currency, target_currency):
     url = f"https://v6.exchangerate-api.com/v6/3a2af7d89f02d2d2cc69c173/latest/{base_currency}"
     response = requests.get(url)
