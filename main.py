@@ -7,7 +7,7 @@ currency_codes = [
     "MXN", "SGD", "HKD", "NOK", "KRW", "TRY", "RUB", "INR", "BRL", "ZAR"
 ]
 def get_exchange_rate(api_key, base_currency, target_currency):
-    url = f"https://v6.exchangerate-api.com/v6/3a2af7d89f02d2d2cc69c173/latest"
+    url = f"https://v6.exchangerate-api.com/v6/3a2af7d89f02d2d2cc69c173/latest/{base_currency}"
     response = requests.get(url)
     data = response.json()
     
