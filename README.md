@@ -70,8 +70,8 @@ This project is a simple Currency Converter application built using Python's `tk
 - Execute the main.py script using Python:
 ```python
   python main.py
-  Using the Application:
 ```
+**Using the Application:**
 
 - Select the base currency and target currency from the dropdown menus.
 - Enter the amount you want to convert.
