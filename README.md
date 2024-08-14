@@ -47,25 +47,15 @@ This project is a simple Currency Converter application built using Python's `tk
   data = response.json()
 
 
-## Project Structure
 
-CurrencyConverter/
-│
-├── main.py               # Main Python script containing the application logic
-├── flags/                # Directory containing flag images
-│   ├── USD.png           # Example flag image for the US dollar
-│   ├── EUR.png           # Example flag image for the Euro
-│   ├── ...
-└── README.md             # This README file
-
-### How to Run the Project
+# How to Run the Project
 ## Prerequisites
 - **Python 3.x**: Make sure Python is installed on your system.
 - **Install Required Modules**: Run the following command to install the necessary Python libraries:
 - pip install tkinter pillow requests
 
-### Steps
-## Obtain an API Key:
+## Steps
+### Obtain an API Key:
 
 - Sign up at ExchangeRate-API to obtain a free API key.
 - Replace YOUR_API_KEY in the main.py script with your actual API key.
@@ -74,7 +64,7 @@ CurrencyConverter/
 - Download flag images for each currency you want to support.
 - Save these images in the flags/ directory with filenames matching the currency codes (e.g., USD.png, EUR.png).
 
-## Run the Application:
+### Run the Application:
 
 - Navigate to the project directory.
 - Execute the main.py script using Python:
