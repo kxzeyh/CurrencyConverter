@@ -60,7 +60,7 @@ def load_flag(currency_code):
     img_path = os.path.join(flags_dir, f"{currency_code}.png")
     print("Looking for image at:", img_path)  # Debugging line
 
-    img = Image.open(img_path).resize((25, 15), Image.Resampling.LANCZOS)
+    img = Image.open(img_path).resize((30, 20), Image.Resampling.NEAREST)
     return ImageTk.PhotoImage(img)
 
 def swap_currencies():
@@ -126,7 +126,6 @@ convert_button.pack(pady=20)
 result_label = tk.Label(root, text="", font=("Arial", 14, "bold"))
 result_label.pack(pady=10)
 
-# Bind the combobox selection change event to update the flags
 base_currency_combo.bind("<<ComboboxSelected>>", lambda event: update_flag(base_flag_label, base_currency_var.get()))
 target_currency_combo.bind("<<ComboboxSelected>>", lambda event: update_flag(target_flag_label, target_currency_var.get()))
 
