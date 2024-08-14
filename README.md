@@ -45,3 +45,52 @@ This project is a simple Currency Converter application built using Python's `tk
   url = f"https://v6.exchangerate-api.com/v6/YOUR_API_KEY/latest/USD"
   response = requests.get(url)
   data = response.json()
+
+
+## Project Structure
+
+CurrencyConverter/
+│
+├── main.py               # Main Python script containing the application logic
+├── flags/                # Directory containing flag images
+│   ├── USD.png           # Example flag image for the US dollar
+│   ├── EUR.png           # Example flag image for the Euro
+│   ├── ...
+└── README.md             # This README file
+
+### How to Run the Project
+## Prerequisites
+- **Python 3.x**: Make sure Python is installed on your system.
+- **Install Required Modules**: Run the following command to install the necessary Python libraries:
+- pip install tkinter pillow requests
+
+### Steps
+## Obtain an API Key:
+
+- Sign up at ExchangeRate-API to obtain a free API key.
+- Replace YOUR_API_KEY in the main.py script with your actual API key.
+- Prepare Flag Images:
+
+- Download flag images for each currency you want to support.
+- Save these images in the flags/ directory with filenames matching the currency codes (e.g., USD.png, EUR.png).
+
+## Run the Application:
+
+- Navigate to the project directory.
+- Execute the main.py script using Python:
+```python
+  python main.py
+  Using the Application:
+```
+
+- Select the base currency and target currency from the dropdown menus.
+- Enter the amount you want to convert.
+- Click the "Convert" button to see the result.
+- Use the "Swap" button to switch between base and target currencies.
+
+## Notes
+- **Error Handling**: The application includes basic error handling to alert the user if the exchange rate data cannot be retrieved or if the flag image is not found.
+- **Customization**: You can easily add more currencies by adding the relevant flag images to the flags/ directory and updating the currencies dictionary in the script.
+
+## License
+- This project is for educational purposes and is provided as-is without any warranties. You are free to modify and distribute the code as you see fit.
